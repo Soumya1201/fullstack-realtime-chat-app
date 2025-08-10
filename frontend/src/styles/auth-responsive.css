@@ -1,0 +1,215 @@
+/* Enhanced responsive styles for login/signup pages */
+/* Fix for zoom levels 67% and above */
+
+/* Base responsive container */
+.auth-container-responsive {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.auth-grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  height: 100dvh;
+  overflow: visible;
+}
+
+@media screen and (max-width: 1024px) {
+  .auth-grid-responsive {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+/* Form container responsive sizing */
+.auth-form-container {
+  width: 100%;
+  max-width: min(90vw, 480px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--fallback-b1, oklch(var(--b1)));
+  border-radius: var(--rounded-box, 1rem);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive grid for login/signup layout */
+.auth-grid-responsive {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+@media screen and (min-width: 1025px) {
+  .auth-grid-responsive {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .auth-grid-responsive {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Image pattern container responsive */
+.auth-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 2vw, 3rem);
+  background: var(--fallback-b2, oklch(var(--b2)));
+}
+
+/* Responsive typography */
+.auth-title-responsive {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle-responsive {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--fallback-bc, oklch(var(--bc) / 0.6));
+}
+
+/* Form elements responsive sizing */
+.auth-input-responsive {
+  width: 100%;
+  padding: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.auth-button-responsive {
+  width: 100%;
+  padding: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Spacing responsive */
+.auth-spacing-responsive {
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* Container queries for auth forms */
+@container (max-width: 400px) {
+  .auth-form-compact {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Zoom level specific fixes */
+@media screen and (min-width: 768px) {
+  .auth-zoom-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .auth-zoom-67-compatible {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Ultra-high zoom level fixes (80%+) */
+@media screen and (min-width: 900px) {
+  .auth-extreme-zoom {
+    padding: 0.5rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  }
+}
+
+/* Ensure proper scaling at all zoom levels */
+.auth-scale-responsive {
+  transform-origin: center center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for content overflow at high zoom */
+.auth-overflow-fix {
+  overflow-y: auto;
+  max-height: 100vh;
+  max-height: 100dvh;
+}
+
+/* Responsive padding */
+.auth-padding-responsive {
+  padding: clamp(0.5rem, 2vw, 2rem);
+}
+
+/* Ensure images scale properly */
+.auth-image-responsive {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Fix for extreme zoom levels (150%+) */
+@media screen and (min-width: 500px) {
+  .auth-extreme-container {
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile-specific responsive styles */
+@media screen and (max-width: 767px) {
+  .auth-mobile-container {
+    padding: 1rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .auth-mobile-form {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablet responsive styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .auth-tablet-container {
+    padding: 2rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+/* Desktop responsive styles */
+@media screen and (min-width: 1025px) {
+  .auth-desktop-container {
+    padding: 3rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+/* Ensure proper viewport units */
+.auth-viewport-fix {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Responsive spacing utilities */
+.auth-space-y-responsive > * + * {
+  margin-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.auth-space-x-responsive > * + * {
+  margin-left: clamp(0.5rem, 2vw, 1.5rem);
+}

@@ -1,0 +1,164 @@
+/* Responsive layout fixes for viewport issues */
+@layer utilities {
+  /* Ensure proper viewport height on mobile devices */
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  .max-h-screen-safe {
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+  
+  /* Better flex layout for chat container */
+  .chat-container-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+  
+  /* Ensure scrollable content area */
+  .scrollable-chat-area {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0;
+  }
+  
+  /* Responsive height calculations */
+  @media (max-width: 768px) {
+    .chat-height-mobile {
+      height: calc(100vh - 4rem);
+      height: calc(100dvh - 4rem);
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .chat-height-desktop {
+      height: calc(100vh - 8rem);
+      height: calc(100dvh - 8rem);
+    }
+  }
+}
+
+/* Fix for zoom level issues */
+@media screen and (max-width: 1024px) {
+  .zoom-responsive {
+    transform-origin: top center;
+    transform: scale(0.9);
+  }
+}
+
+/* Ensure proper scrolling behavior */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Fix for high zoom levels (67%+) */
+@media screen and (min-width: 1200px) {
+  .zoom-responsive-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .responsive-height {
+    min-height: calc(100vh - 5rem);
+    min-height: calc(100dvh - 5rem);
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .zoom-responsive-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
+
+/* Ensure content is scrollable when zoomed */
+.responsive-scroll-container {
+  overflow-y: auto;
+  max-height: calc(100vh - 8rem);
+  max-height: calc(100dvh - 8rem);
+}
+
+/* Scale adjustments for different zoom levels */
+@media screen and (min-width: 1000px) {
+  .scale-responsive {
+    transform-origin: top center;
+    transform: scale(1);
+  }
+}
+
+/* Container queries for better responsive behavior */
+@container (min-width: 300px) {
+  .container-responsive {
+    padding: 1rem;
+  }
+}
+
+/* Fix overflow issues */
+.overflow-fix {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Ensure proper viewport units */
+.viewport-fix {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Responsive padding for zoom levels */
+.responsive-padding {
+  padding: clamp(0.5rem, 2vw, 2rem);
+}
+
+/* Ensure content doesn't get cut off */
+.content-safe-zone {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Additional fixes for zoom levels above 67% */
+@media screen and (min-width: 768px) {
+  .zoom-safe-container {
+    max-width: min(90vw, 1200px);
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+  
+  .zoom-safe-height {
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100dvh - 4rem);
+    max-height: none;
+    overflow-y: auto;
+  }
+}
+
+/* Ultra-wide screen support */
+@media screen and (min-width: 1600px) {
+  .ultra-wide-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* Zoom level specific adjustments */
+@media screen and (min-width: 900px) {
+  .zoom-67-compatible {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
