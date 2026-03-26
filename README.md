@@ -70,6 +70,4 @@ The application is deployed on Render at: https://fullstack-realtime-chat-app-sv
 
 Feel free to submit issues and pull requests.
 
-## License
 
-This project is licensed under the MIT License.
